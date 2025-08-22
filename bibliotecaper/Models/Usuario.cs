@@ -23,6 +23,7 @@ namespace Bibliotecaper.Models
         [MaxLength(100, ErrorMessage = "La contraseña no puede exceder los 100 caracteres")]
         public string Contraseña { get; set; }
         public virtual ICollection<Libro> Libros { get; set; } = new List<Libro>();
+        public virtual ICollection<BookProgress> BookProgresses { get; set; } = new List<BookProgress>();
 
     }
 }

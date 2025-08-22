@@ -12,6 +12,7 @@ namespace Bibliotecaper.Data
         public DbSet<Autor> Autores { get; set; }
         public DbSet<Generos> Generos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<BookProgress> BookProgresses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,6 +32,16 @@ namespace Bibliotecaper.Data
                 .HasOne(l => l.Usuario)
                 .WithMany(u => u.Libros)
                 .HasForeignKey(l => l.UsuarioId);
+            modelBuilder.Entity<BookProgress>()
+                .HasOne(bp => bp.Usuario)
+                .WithMany(u => u.BookProgresses)
+                .HasForeignKey(bp => bp.UsuarioId)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<BookProgress>()
+                .HasOne(bp => bp.Libro)
+                .WithMany(l => l.BookProgress)
+                .HasForeignKey(bp => bp.LibroId)
+                .OnDelete(DeleteBehavior.Cascade);
         }   
     }
     

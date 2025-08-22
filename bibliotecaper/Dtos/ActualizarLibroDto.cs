@@ -14,7 +14,7 @@ namespace Bibliotecaper.Dtos
 
         public string? Estado { get; set; } = "Por leer";
 
-        public int? calificacion { get; set; }
+        public int? Calificacion { get; set; }
 
         public int? NumeroPaginas { get; set; }
 

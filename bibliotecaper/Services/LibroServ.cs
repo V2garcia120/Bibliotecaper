@@ -61,7 +61,7 @@ namespace Bibliotecaper.Services
                 Titulo = dto.Titulo,
                 AutorId = dto.AutorId,
                 Descripcion = dto.Descripcion,
-                calificacion = dto.calificacion,
+                calificacion = dto.Calificacion,
                 Estado = dto.Estado,
                 GeneroId = dto.GeneroId,
                 NumeroPaginas = dto.NumPaginas,
@@ -97,9 +97,9 @@ namespace Bibliotecaper.Services
                 {
                     existingLibro.GeneroId = dto.GeneroId.Value;
                 }
-                if (dto.calificacion != null)
+                if (dto.Calificacion != null)
                 {
-                    existingLibro.calificacion = dto.calificacion;
+                    existingLibro.calificacion = dto.Calificacion;
                 }
                 if (dto.Estado != null)
                 {

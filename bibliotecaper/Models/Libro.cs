@@ -6,7 +6,7 @@ namespace Bibliotecaper.Models
     {
         [Required(ErrorMessage = "id requerido")]
         public Guid Id { get; set; } = Guid.NewGuid();
-        [Required(ErrorMessage = "Título requerido")]s
+        [Required(ErrorMessage = "Título requerido")]
         [MaxLength(100, ErrorMessage = "El título no puede exceder los 100 caracteres")]
         public string Titulo { get; set; }
         [MaxLength(500, ErrorMessage = "La descripccion no puede exeder los 500 caracteres")]
@@ -39,6 +39,7 @@ namespace Bibliotecaper.Models
         public virtual Usuario Usuario { get; set; }
         public virtual Autor Autor { get; set; }
         public virtual Generos Genero { get; set; }
+        public virtual ICollection<BookProgress> BookProgress { get; set; } = new List<BookProgress>();
 
     }
 }

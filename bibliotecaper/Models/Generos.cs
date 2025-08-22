@@ -5,7 +5,7 @@ namespace Bibliotecaper.Models
     public class Generos
     {
         [Required(ErrorMessage = "id requerido")]
-        public Guid id { get; set; }
+        public Guid Id { get; set; }
         [Required(ErrorMessage = "nombre requerido")]
         [MinLength(5, ErrorMessage = "El nombre debe tener minimo 5 caracteres")]
         [MaxLength(100, ErrorMessage = "No puede exceder los 100 Caracteres")]
